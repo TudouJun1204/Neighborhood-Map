@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Map</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <span class="nav-title">Neighborhood Map of Greater NYC Area</span>
+          </div>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="q" data-bind="textInput: searchItem, valueUpdate: 'afterkeydown'">
+              <div class="input-group-btn">
+                  <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <main class="container-fluid">
+      <div class="row">
+        <div id="map"></div>
+
+        <aside class="col-md-3 collapse col-md-offset-9 collapsed in" id="navbarSupportedContent">
+          <div class="sidenav">
+            <div class="list-group" data-bind="foreach: locationList">
+                <a href="#" class="list-group-item list-group-item-action" data-bind="text: title, click: show"></a>
+            </div>
+
+
+           <div class="list-group">
+              <select class="list-group-item-action">
+                <option>Select a place...</option>
+                <option href="#Metropolitan Museum of Art" onclick="myFunction()">Metropolitan Museum of Art</option>
+                <option href="#MOMA">MOMA</option>
+                <option href="#Grand Central Terminal">Grand Central Terminal</option>
+                <option href="#Central Park">Central Park</option>
+                <option href="#Museum of Modern Art">Museum of Modern Art</option>
+                <option href="#Stevens Institute of Technology">Stevens Institute of Technology</option>
+                <option href="#Statue of Liberty">Statue of Liberty</option>
+                <option href="#Charging Bull">Charging Bull</option>
+              </select>
+            </div>
+
+<!--            <div class="list-group">
+                          <Select class="list-group-item list-group-item-action" data-bind="options: my.VM.locations, optionsText: title, click: show, optionsCaption: 'Select a place...'">
+                          </Select>
+                        </div>
+-->
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container text-middle">
+        <a href="https://developer.foursquare.com/" class="href" target="_blank">
+          <img id="foursquare-img" src="http://www.freeiconspng.com/uploads/foursquare-icon-22.png" alt="used with foursquare" >
+        </a>
+        <span class="footer-name">Powered by Foursquare; All Rights reserved</span>
+      </div>
+    </footer>
+
+    <!-- Knockout.js -->
+    <script src="js/lib/knockout.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyAxvlUJa8lIo1GIldft5bAwrxFXLJZq70M&callback=initMap" onerror="googleMapsError()">
+    </script>
+  </body>
+</html>
