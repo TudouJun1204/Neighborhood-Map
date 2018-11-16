@@ -19,4 +19,4 @@ This is the seventh project for the Udacity Nanodegree. This project involves de
 - Download the Project
 - Open index.html file
 - Click a marker and it will display unique information about a location
-- Also you can click the locations in the list displayed on the left side of the screen
+- Also you can click the locations in the list displayed on the right side of the screen
